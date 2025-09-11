@@ -1,10 +1,10 @@
-import dayjs from 'dayjs'
+const dayjs = require('dayjs')
 
 /**
  * 保存数据到文件
  * @param {object} json
  */
-export async function saveToFile(json) {
+module.exports.saveToFile = async json => {
   const dirName = dayjs().format('YYYY-MM-DD')
   const path = await fs.readdirSync('./')
 

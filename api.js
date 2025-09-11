@@ -1,6 +1,6 @@
-import { getGithubTrendingContent } from './github.js'
+const { getGithubTrendingContent } = require('./github')
 
-export const actions = [
+module.exports.actions = [
   [getGithubTrendingContent('https://github.com/trending?since=daily'), 'github_trending_daily'],
   [getGithubTrendingContent('https://github.com/trending?since=weekly'), 'github_trending_weekly'],
   [getGithubTrendingContent('https://github.com/trending?since=monthly'), 'github_trending_monthly'],

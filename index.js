@@ -1,5 +1,5 @@
-import { actions } from './api.js'
-import { saveToFile } from './save.js'
+const { actions } = require('./api')
+const { saveToFile } = require('./save')
 
 /**
  * 主程序

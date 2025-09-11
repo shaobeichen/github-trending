@@ -1,11 +1,11 @@
-import axios from 'axios'
-import cheerio from 'cheerio'
+const axios = require('axios')
+const cheerio = require('cheerio')
 
 /**
  * 获取github趋势页面内容
  * @param {string} url
  */
-export const getGithubTrendingContent = async url => {
+module.exports.getGithubTrendingContent = async url => {
   try {
     const headers = {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
