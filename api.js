@@ -1,6 +1,6 @@
 const { getGithubTrendingContent } = require('./github')
 
-module.exports.actions = [
+const actions = [
   [getGithubTrendingContent('https://github.com/trending?since=daily'), 'github_trending_daily'],
   [getGithubTrendingContent('https://github.com/trending?since=weekly'), 'github_trending_weekly'],
   [getGithubTrendingContent('https://github.com/trending?since=monthly'), 'github_trending_monthly'],
@@ -38,3 +38,7 @@ module.exports.actions = [
   [getGithubTrendingContent('https://github.com/trending/rust?since=weekly'), 'github_rust_weekly'],
   [getGithubTrendingContent('https://github.com/trending/rust?since=monthly'), 'github_rust_monthly'],
 ]
+
+module.exports = {
+  actions,
+}

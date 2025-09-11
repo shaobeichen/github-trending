@@ -5,7 +5,7 @@ const cheerio = require('cheerio')
  * 获取github趋势页面内容
  * @param {string} url
  */
-module.exports.getGithubTrendingContent = async url => {
+const getGithubTrendingContent = async url => {
   try {
     const headers = {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -37,4 +37,8 @@ module.exports.getGithubTrendingContent = async url => {
   } catch (error) {
     console.error('爬取失败:', error)
   }
+}
+
+module.exports = {
+  getGithubTrendingContent,
 }

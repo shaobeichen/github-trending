@@ -4,7 +4,7 @@ const dayjs = require('dayjs')
  * 保存数据到文件
  * @param {object} json
  */
-module.exports.saveToFile = async json => {
+const saveToFile = async json => {
   const dirName = dayjs().format('YYYY-MM-DD')
   const path = await fs.readdirSync('./')
 
@@ -25,4 +25,8 @@ module.exports.saveToFile = async json => {
     parseData.urls.unshift(cdnUrl)
     await fs.writeFileSync('./total.json', JSON.stringify(parseData))
   }
+}
+
+module.exports = {
+  saveToFile,
 }
