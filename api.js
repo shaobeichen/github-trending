@@ -1,4 +1,4 @@
-import { getGithubTrendingContent } from './github'
+import { getGithubTrendingContent } from './github.js'
 
 export const actions = [
   [getGithubTrendingContent('https://github.com/trending?since=daily'), 'github_trending_daily'],

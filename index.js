@@ -1,5 +1,5 @@
-import { actions } from './api'
-import { saveToFile } from './save'
+import { actions } from './api.js'
+import { saveToFile } from './save.js'
 
 /**
  * 主程序
