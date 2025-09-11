@@ -16,7 +16,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN }} 
 
       - name: Setup Node.js
         uses: actions/setup-node@main
@@ -27,7 +29,6 @@ jobs:
         run: |
           git config --global user.email "shaobeichen@outlook.com"
           git config --global user.name "shaobeichen"
-          git remote set-url origin https://shaobeichen:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
 
       - name: Build
@@ -35,4 +36,7 @@ jobs:
           npm install
           npm run start
           git add .
-          git diff-index --quiet HEAD && git status || git commit -m "feat: Update by github action" && git push
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "feat: Update by github action"
+            git push
+          fi
