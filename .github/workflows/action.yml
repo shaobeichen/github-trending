@@ -27,7 +27,7 @@ jobs:
         run: |
           git config --global user.email "shaobeichen@outlook.com"
           git config --global user.name "shaobeichen"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://shaobeichen:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
 
       - name: Build
