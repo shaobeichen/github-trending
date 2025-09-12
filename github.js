@@ -15,6 +15,8 @@ const getGithubTrendingContent = async url => {
     const repositories = []
     // 查找所有包含仓库信息的Box-row元素
     $('.Box .Box-row').each((index, element) => {
+      // 链接
+      const itemUrl = 'https://github.com' + $(element).find('h2 a').attr('href')
       // 标题
       const title = $(element).find('h2 a').text().replace(/\s\s+/g, ' ').trim()
       // 描述
@@ -25,7 +27,7 @@ const getGithubTrendingContent = async url => {
       const stars = $(element).find('.f6.color-fg-muted a:nth-child(2)').text().trim().replace(/,/g, '')
 
       // 添加到结果数组
-      repositories.push({ language, title, description, stars })
+      repositories.push({ url: itemUrl, language, title, description, stars })
     })
 
     // 输出结果
