@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.TOKEN }} 
+          token: ${{ secrets.TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@main
@@ -37,6 +37,6 @@ jobs:
           npm run start
           git add .
           if ! git diff-index --quiet HEAD; then
-            git commit -m "feat: Update by github action"
+            git commit -m "feat: Update by github action [skip ci]"
             git push
           fi
